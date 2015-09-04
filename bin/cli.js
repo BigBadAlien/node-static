@@ -40,6 +40,10 @@ var fs = require('fs'),
             alias: 'z',
             description: 'enable compression (tries to serve file of same name plus \'.gz\')'
         })
+        .option('mime', {
+            alias: 'm',
+            description: 'define additional mime tipes'
+        })
         .option('help', {
             alias: 'h',
             description: 'display this help message'
@@ -90,6 +94,12 @@ if (argv['header-file']){
 
 if (argv.gzip){
     (options = options || {}).gzip = true;
+}
+
+if (argv.mime){
+    statik.mime.define(
+        JSON.parse(argv.mime)
+    );
 }
 
 file = new(statik.Server)(dir, options);

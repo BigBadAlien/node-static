@@ -194,6 +194,11 @@ example: `{ indexFile: "index.htm" }`
 
 > Defaults to `index.html`
 
+#### `mime` #
+
+Define additional mime tipes.
+
+example: `-m '{"text/html": ["phtml"]}'`
 
 Command Line Interface
 ----------------------
