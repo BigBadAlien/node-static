@@ -223,7 +223,8 @@ $ static public
 serving "public" at http://127.0.0.1:8080
 
 # specify additional headers (this one is useful for development)
-$ static -H '{"Cache-Control": "no-cache, must-revalidate"}'
+# and add additional mime type
+$ static -H '{"Cache-Control": "no-cache, must-revalidate"}' -m '{"text/html": ["phtml"]}' -p 80
 serving "." at http://127.0.0.1:8080
 
 # set cache control max age
